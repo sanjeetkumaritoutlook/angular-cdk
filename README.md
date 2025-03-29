@@ -2,15 +2,33 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.3.
 
-## Development server
+## @angular/cdk - it’s a headless UI toolkit
 
-To start a local development server, run:
+@angular/cdk (Component Dev Kit) is a package from Angular that provides essential building blocks for creating sophisticated UI components. It offers reusable utilities and behaviors without enforcing specific styles, unlike Angular Material.
 
-```bash
-ng serve
-```
+Key Features of @angular/cdk:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Accessibility (@angular/cdk/a11y) – Utilities to make components accessible (e.g., focus management, screen reader support).
+
+Drag and Drop (@angular/cdk/drag-drop) – Adds draggable and droppable functionality.
+
+Overlay (@angular/cdk/overlay) – Handles floating elements like modals, tooltips, and dropdowns.
+
+Portal (@angular/cdk/portal) – Enables dynamically loading components in different locations.
+
+Scrolling (@angular/cdk/scrolling) – Provides virtual scrolling for better performance with large lists.
+
+Table (@angular/cdk/table) – Low-level utilities to build custom tables.
+
+Tree (@angular/cdk/tree) – Utilities to build tree structures like file explorers.
+
+Text Field (@angular/cdk/text-field) – Enhances text inputs (e.g., auto-resizing textarea).
+
+Stepper (@angular/cdk/stepper) – Utilities for building step-based workflows.
+
+Clipboard (@angular/cdk/clipboard) – Provides copy-to-clipboard functionality.
+
+Since it’s a headless UI toolkit, you can use it independently or along with Angular Material to create custom components. 
 
 ## Code scaffolding
 

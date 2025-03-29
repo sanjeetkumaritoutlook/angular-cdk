@@ -1,3 +1,5 @@
 import { Routes } from '@angular/router';
-
-export const routes: Routes = [];
+import { TooltipComponent } from './tooltip/tooltip.component';
+export const routes: Routes = [
+    { path: 'tooltip', component: TooltipComponent }
+];
