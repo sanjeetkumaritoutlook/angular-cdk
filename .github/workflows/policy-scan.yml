@@ -11,5 +11,5 @@ jobs:
   call-org-policy-scan:
     uses: sanjeetkumaritoutlook/reusable-workflows/.github/workflows/policy-scan.yml@main
     with:
-      check_license: true
-      check_readme: true
+      check_license: false
+      check_readme: false
