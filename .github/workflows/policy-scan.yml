@@ -1,46 +1,15 @@
-name: Policy Scan
+name: Trigger Org-Level Policy Scan
 
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
-  scan:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run Gitleaks (v7, free)
-        run: |
-          curl -sSL https://github.com/zricethezav/gitleaks/releases/download/v7.6.1/gitleaks-linux-amd64 -o gitleaks
-          chmod +x gitleaks
-          ./gitleaks --path=. --verbose
-
-
-      - name: Check for LICENSE file
-        run: |
-          if [ ! -f LICENSE ]; then
-            echo "❌ LICENSE file is missing."
-            exit 1
-          fi
-
-      - name: Check for README
-        run: |
-          if [ ! -f README.md ]; then
-            echo "❌ README.md is missing."
-            exit 1
-          fi
-
-      - name: Upload Gitleaks Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: gitleaks-report
-          path: gitleaks-report.json
+  call-org-policy-scan:
+    uses: sanjeetkumaritoutlook/reusable-workflows/.github/workflows/policy-scan.yml@main
+    with:
+      check_license: true
+      check_readme: true
