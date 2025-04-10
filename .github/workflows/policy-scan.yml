@@ -22,7 +22,8 @@ jobs:
         run: |
           curl -sSL https://github.com/zricethezav/gitleaks/releases/download/v7.6.1/gitleaks-linux-amd64 -o gitleaks
           chmod +x gitleaks
-          ./gitleaks detect --source . --verbose
+          ./gitleaks --path=. --verbose
+
 
       - name: Check for LICENSE file
         run: |
@@ -37,3 +38,9 @@ jobs:
             echo "❌ README.md is missing."
             exit 1
           fi
+
+       - name: Upload Gitleaks Report
+         uses: actions/upload-artifact@v4
+         with:
+            name: gitleaks-report
+            path: gitleaks-report.json
