@@ -1,0 +1,10 @@
+name: Trigger Org-Level Policy Scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  call-org-policy-scan:
+    uses: sanjeetkumaritoutlook/reusable-workflows/.github/workflows/policy-scan.yml@main
